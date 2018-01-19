@@ -6,19 +6,19 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 17:24:49 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 17:31:25 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-	static char		*ft_ostr(long p)
+	static char		*ft_ostr(unsigned int p)
 	{
-		long tmp;
+		unsigned int tmp;
 		int i;
 		char *str;
 
-		p < 0 ? p -= 4294967296 : 0;
+		p -= 4294967296;
 		tmp = p;
 		i = 1;
 		while (p >= 9)
@@ -67,13 +67,13 @@
 // 	return (res);
 // }
 
-static char		*ft_ostrl(long p)
+static char		*ft_ostrl(unsigned long p)
 {
 	unsigned long tmp;
 	int i;
 	char *str;
 
-	p < 0 ? p -= 4294967296 : 0;
+	p -= 4294967296;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
@@ -107,7 +107,7 @@ static char		*ft_ostrll(long long p)
 	int i;
 	char *str;
 
-	p < 0 ? p -= 4294967296 : 0;
+	p -= 4294967296 ;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
