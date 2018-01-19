@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 18:03:45 by vle-gal           #+#    #+#             */
-/*   Updated: 2017/11/22 19:46:00 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 12:20:35 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ static char		*ft_ustrl(long d, t_struct *para)
 	}
 	dstr[len] = less + '0';
 	para->d == 1 ? dstr[10] = '6' : 0;
+	printf("\n-----------%s\n", dstr);
 	return (dstr);
 }
 
@@ -138,6 +139,7 @@ void			ft_u_main(t_struct *para, va_list args)
 		para->f_two == '\0' ? d = ft_ustrh((short)va_arg(args, int)) : 0;
 		para->f_two == 'h' ? d = ft_ustrhh((char)va_arg(args, int)) : 0;
 	}
+	printf("%c\n", para->f_one);
 	para->f_one == 'j' ? d = ft_ustrll(va_arg(args, long long)) : 0;
 	para->f_one == 'z' ? d = ft_ustrl(va_arg(args, long), para) : 0;
 	para->s_ = 0;

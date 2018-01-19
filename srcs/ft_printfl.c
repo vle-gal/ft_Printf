@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:26 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/18 10:45:43 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 12:26:08 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static void		ft_flags(const char *format, t_struct *para)
 
 static int		ft_format(const char *format, t_struct *para)
 {
+		para->f_one = 0;
+		para->f_two = 0;
 	while ((format[para->i] && format[para->i] != '%') ||
 	(format[para->i] == '%' && format[para->i + 1] == '%'))
 	{

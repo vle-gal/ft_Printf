@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:09:12 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/19 11:55:14 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 12:22:19 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int main(void)
 0017777777777200000000001777777777720000000000%o 0000042\n", 42);
 	unsigned char a;
 	a = 131;
-	printf("a =%d a =%zu\n",a, sizeof(a) );
-	ft_printf("a =%d a =%zu\n",a, sizeof(a) );
+	printf("a =%hhu a =%zu\n",a, a );
+	ft_printf("a =%hhu a =%zu\n",a, a );
 	printf("%o\n", 9);
 	ft_printf("%o\n", 9);
 
@@ -60,6 +60,8 @@ int main(void)
 	printf("% 04.5d\n", 42);
 	ft_printf("% 04.5d\n", 42);
 
+	printf("a =%hhu b=%zu  c=%d\n ",a, a, 42 );
+	ft_printf("a =%hd b=%ld  c=%d\n",100, 150, 42 );
   // printf("1s%0d\n", 42);
   // printf("1s%0d\n", 42);
   // printf("1s%0d\n", 42);
