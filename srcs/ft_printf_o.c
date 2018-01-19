@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 14:34:16 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 14:42:46 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,20 @@
 			p /= 8;
 			i++;
 		}
-		// printf("%d\n", i);
 		str = ft_strnew(i);
 		binaire_octal = 0b00000111;
 		p = tmp;
-		str[i--] = 0;
+		p > 0 ? str[i--] = 0 : 0;
+		p == 0 ? str[i] = 0: 0;
+		p == 0 ? str[--i] = '0': 0;
+		// printf("%d\n", p);
+		// printf("%c\n", str[i]);
 		while (p > 0)
 		{
-		// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
 		tmp = p & binaire_octal;
-		// printf("%d\n", tmp);
 		str[i--] = tmp + '0';
-		// printf("|%c|\n", str[i - 1]);
 		p >>= 3;
 		}
-		// printf("%d\n", i);
-		// printf("%s\n", str);
 		return (str);
 	}
 
@@ -90,7 +88,9 @@ static char		*ft_ostrl(long p)
 	str = ft_strnew(i);
 	binaire_octal = 0b00000111;
 	p = tmp;
-	str[i--] = 0;
+	p > 0 ? str[i--] = 0 : 0;
+		p == 0 ? str[i] = 0 : 0;
+		p == 0 ? str[--i] = '0': 0;
 	while (p > 0)
 	{
 	// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
@@ -123,7 +123,9 @@ static char		*ft_ostrll(long long p)
 	str = ft_strnew(i);
 	binaire_octal = 0b00000111;
 	p = tmp;
-	str[i--] = 0;
+	p > 0 ?str[i--] = 0 : 0;
+		p == 0 ? str[i] = 0: 0;
+		p == 0 ? str[--i] = '0': 0;
 	while (p > 0)
 	{
 	// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
@@ -156,7 +158,9 @@ static char		*ft_ostrh(short p)
 	str = ft_strnew(i);
 	binaire_octal = 0b00000111;
 	p = tmp;
-	str[i--] = 0;
+	p > 0 ? str[i--] = 0 : 0;
+		p == 0 ? str[i] = 0: 0;
+		p == 0 ? str[--i] = '0': 0;
 	while (p > 0)
 	{
 	// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);

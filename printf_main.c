@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:09:12 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/19 14:12:58 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 14:37:07 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int main(void)
 	printf("\n--------\n");
   printf("\n");
 
-ft_printf("%o\n", 42);
-printf("%o\n", 42);
+ft_printf("%o\n", 0);
+printf("%o\n", 0);
 // 	printf("52Kashim a 1751 histoires à raconterIl fait au moins 377777603000\
 // 017777777777200000000001777777777720000000000 %o 0000042\n", 344534);
 //
