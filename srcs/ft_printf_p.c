@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:09 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 17:28:26 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 17:39:59 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static char		*ft_putaddrr(long long int p)
 	p > 0 ? str[i--] = 0 : 0;
 	p == 0 ? str[i] = 0: 0;
 	p == 0 ? str[--i] = '0': 0;
+	p == 0 ? --i : 0;
 	while (p > 0)
 	{
 		tmp = p & binaire_Hex;
