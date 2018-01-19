@@ -6,20 +6,19 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 16:05:16 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 17:24:49 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-	static char		*ft_ostr(unsigned int p)
+	static char		*ft_ostr(long p)
 	{
-		char binaire_octal;
-		unsigned int tmp;
+		long tmp;
 		int i;
 		char *str;
 
-		p -= 4294967296;
+		p < 0 ? p -= 4294967296 : 0;
 		tmp = p;
 		i = 1;
 		while (p >= 9)
@@ -28,7 +27,6 @@
 			i++;
 		}
 		str = ft_strnew(i);
-		binaire_octal = 0b00000111;
 		p = tmp;
 		p > 0 ? str[i--] = 0 : 0;
 		p == 0 ? str[i] = 0: 0;
@@ -69,14 +67,13 @@
 // 	return (res);
 // }
 
-static char		*ft_ostrl(unsigned long p)
+static char		*ft_ostrl(long p)
 {
-	char binaire_octal;
 	unsigned long tmp;
 	int i;
 	char *str;
 
-	p -= 4294967296;
+	p < 0 ? p -= 4294967296 : 0;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
@@ -86,7 +83,6 @@ static char		*ft_ostrl(unsigned long p)
 	}
 	// printf("%d\n", i);
 	str = ft_strnew(i);
-	binaire_octal = 0b00000111;
 	p = tmp;
 	p > 0 ? str[i--] = 0 : 0;
 		p == 0 ? str[i] = 0 : 0;
@@ -107,12 +103,11 @@ static char		*ft_ostrl(unsigned long p)
 
 static char		*ft_ostrll(long long p)
 {
-	char binaire_octal;
 	long long tmp;
 	int i;
 	char *str;
 
-	p -= 4294967296;
+	p < 0 ? p -= 4294967296 : 0;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
@@ -122,7 +117,6 @@ static char		*ft_ostrll(long long p)
 	}
 	// printf("%d\n", i);
 	str = ft_strnew(i);
-	binaire_octal = 0b00000111;
 	p = tmp;
 	p > 0 ?str[i--] = 0 : 0;
 		p == 0 ? str[i] = 0: 0;
@@ -143,7 +137,6 @@ static char		*ft_ostrll(long long p)
 
 static char		*ft_ostrh(short p)
 {
-	char binaire_octal;
 	int tmp;
 	int i;
 	char *str;
@@ -157,7 +150,6 @@ static char		*ft_ostrh(short p)
 	}
 	// printf("%d\n", i);
 	str = ft_strnew(i);
-	binaire_octal = 0b00000111;
 	p = tmp;
 	p > 0 ? str[i--] = 0 : 0;
 		p == 0 ? str[i] = 0: 0;

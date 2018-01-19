@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:07:11 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/18 11:51:10 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 17:10:10 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ typedef struct		s_struct
 # define CYAN "\x1B[36m"
 # define WHITE "\x1B[37m"
 # define CRESET "\x1B[0m"
+# define binaire_octal 0b00000111
+# define binaire_Hex 0b00001111
 
 int		ft_printf(const char* format, ...);
-void	ft_putaddr(void* p, t_struct * para);
+// void	ft_putaddr(void* p, t_struct * para);
 void	ft_puthex(unsigned int p, t_struct * para);
 void	ft_putoctal(unsigned int p, t_struct * para);
 void	ft_putoctal_long(unsigned long p, t_struct * para);
