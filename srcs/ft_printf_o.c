@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 15:32:03 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 16:05:16 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,14 @@
 // 	return (res);
 // }
 
-static char		*ft_ostrl(long p)
+static char		*ft_ostrl(unsigned long p)
 {
 	char binaire_octal;
-	long tmp;
+	unsigned long tmp;
 	int i;
 	char *str;
 
+	p -= 4294967296;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
@@ -111,6 +112,7 @@ static char		*ft_ostrll(long long p)
 	int i;
 	char *str;
 
+	p -= 4294967296;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
