@@ -6,115 +6,169 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 11:23:33 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 14:34:16 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static char		*ft_ostr(int p)
-{
-	unsigned long	adr;
-	char const		*base;
-	char			*res;
-	int				i;
-
-	adr = (unsigned long)p;
-	i = 0;
-	while (p >= 9)
+	static char		*ft_ostr(int p)
 	{
-		p /= 10;
-		i++;
-	}
-	res = ft_strnew(i + 1);
-	base = "01234567";
-	while ((adr / 8) > 0 || i > 1)
-	{
-		res[i] = base[(adr % 8)];
-		adr /= 8;
-		i--;
-	}
-	res[0] = base[(adr % 8)];
+		char binaire_octal;
+		int tmp;
+		int i;
+		char *str;
 
-	return (res);
-}
+		tmp = p;
+		i = 1;
+		while (p >= 9)
+		{
+			p /= 8;
+			i++;
+		}
+		// printf("%d\n", i);
+		str = ft_strnew(i);
+		binaire_octal = 0b00000111;
+		p = tmp;
+		str[i--] = 0;
+		while (p > 0)
+		{
+		// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
+		tmp = p & binaire_octal;
+		// printf("%d\n", tmp);
+		str[i--] = tmp + '0';
+		// printf("|%c|\n", str[i - 1]);
+		p >>= 3;
+		}
+		// printf("%d\n", i);
+		// printf("%s\n", str);
+		return (str);
+	}
+
+// static char		*ft_ostr(int p)
+// {
+// 	unsigned long	adr;
+// 	char const		*base;
+// 	char			*res;
+// 	int				i;
+//
+// 	adr = (unsigned long)p;
+// 	i = 0;
+// 	while (p >= 9)
+// 	{
+// 		p /= 10;
+// 		i++;
+// 	}
+// 	res = ft_strnew(i + 1);
+// 	base = "01234567";
+// 	while ((adr / 8) > 0 || i > 1)
+// 	{
+// 		res[i] = base[(adr % 8)];
+// 		adr /= 8;
+// 		i--;
+// 	}
+// 	res[0] = base[(adr % 8)];
+//
+// 	return (res);
+// }
 
 static char		*ft_ostrl(long p)
 {
-	unsigned long	adr;
-	char const		*base;
-	char			*res;
-	int				i;
+	char binaire_octal;
+	long tmp;
+	int i;
+	char *str;
 
-	adr = (unsigned long)p;
-	i = 0;
-	while (p > 9)
+	tmp = p;
+	i = 1;
+	while (p >= 9)
 	{
-		p /= 10;
+		p /= 8;
 		i++;
 	}
-	res = ft_strnew(i + 1);
-	base = "01234567";
-	while ((adr / 8) > 0 || i > 1)
+	// printf("%d\n", i);
+	str = ft_strnew(i);
+	binaire_octal = 0b00000111;
+	p = tmp;
+	str[i--] = 0;
+	while (p > 0)
 	{
-		res[i] = base[(adr % 8)];
-		adr /= 8;
-		i--;
+	// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
+	tmp = p & binaire_octal;
+	// printf("%d\n", tmp);
+	str[i--] = tmp + '0';
+	// printf("|%c|\n", str[i - 1]);
+	p >>= 3;
 	}
-	res[0] = base[(adr % 8)];
-	return (res);
+	// printf("%d\n", i);
+	// printf("%s\n", str);
+	return (str);
 }
 
 static char		*ft_ostrll(long long p)
 {
-	unsigned long	adr;
-	char const		*base;
-	char			*res;
-	int				i;
+	char binaire_octal;
+	long long tmp;
+	int i;
+	char *str;
 
-	adr = (unsigned long)p;
-	i = 0;
-	while (p > 9)
+	tmp = p;
+	i = 1;
+	while (p >= 9)
 	{
-		p /= 10;
+		p /= 8;
 		i++;
 	}
-	res = ft_strnew(i + 1);
-	base = "01234567";
-	while ((adr / 8) > 0 || i > 1)
+	// printf("%d\n", i);
+	str = ft_strnew(i);
+	binaire_octal = 0b00000111;
+	p = tmp;
+	str[i--] = 0;
+	while (p > 0)
 	{
-		res[i] = base[(adr % 8)];
-		adr /= 8;
-		i--;
+	// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
+	tmp = p & binaire_octal;
+	// printf("%d\n", tmp);
+	str[i--] = tmp + '0';
+	// printf("|%c|\n", str[i - 1]);
+	p >>= 3;
 	}
-	res[0] = base[(adr % 8)];
-	return (res);
+	// printf("%d\n", i);
+	// printf("%s\n", str);
+	return (str);
 }
 
 static char		*ft_ostrh(short p)
 {
-	unsigned long	adr;
-	char const		*base;
-	char			*res;
-	int				i;
+	char binaire_octal;
+	int tmp;
+	int i;
+	char *str;
 
-	adr = (unsigned long)p;
-	i = 0;
-	while (p > 9)
+	tmp = p;
+	i = 1;
+	while (p >= 9)
 	{
-		p /= 10;
+		p /= 8;
 		i++;
 	}
-	res = ft_strnew(i + 1);
-	base = "01234567";
-	while ((adr / 8) > 0 || i > 1)
+	// printf("%d\n", i);
+	str = ft_strnew(i);
+	binaire_octal = 0b00000111;
+	p = tmp;
+	str[i--] = 0;
+	while (p > 0)
 	{
-		res[i] = base[(adr % 8)];
-		adr /= 8;
-		i--;
+	// printf("-i =%d, tmp =%d, p =%d, binaire_octal =%d\n", i, tmp, p, binaire_octal);
+	tmp = p & binaire_octal;
+	// printf("%d\n", tmp);
+	str[i--] = tmp + '0';
+	// printf("|%c|\n", str[i - 1]);
+	p >>= 3;
 	}
-	res[0] = base[(adr % 8)];
-	return (res);
+	// printf("%d\n", i);
+	// printf("%s\n", str);
+	return (str);
 }
 
 void			ft_o_main(t_struct *para, va_list args)
