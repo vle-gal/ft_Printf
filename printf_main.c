@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:09:12 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/19 11:08:18 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 11:55:14 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,23 @@ int main(void)
 	printf("\n--------\n");
   printf("\n");
 
-	printf("42Kashim a 1001 histoires à raconterIl fait au moins -8000 \
-	002147483647-21474836482147483647-2147483648%i 0000042\n", 34);
+	printf("52Kashim a 1751 histoires à raconterIl fait au moins 37777760300\
+0017777777777200000000001777777777720000000000%o 0000042\n", 42);
 
-	ft_printf("42Kashim a 1001 histoires à raconterIl fait au moins -8000 \
-	002147483647-21474836482147483647-2147483648%i 0000042\n", 34);
+	ft_printf("52Kashim a 1751 histoires à raconterIl fait au moins 37777760300\
+0017777777777200000000001777777777720000000000%o 0000042\n", 42);
 	unsigned char a;
 	a = 131;
 	printf("a =%d a =%zu\n",a, sizeof(a) );
 	ft_printf("a =%d a =%zu\n",a, sizeof(a) );
+	printf("%o\n", 9);
+	ft_printf("%o\n", 9);
+
+	printf("%p\n", 29905616);
+	ft_printf("%-p\n", 29905616);
+
+	printf("% 04.5d\n", 42);
+	ft_printf("% 04.5d\n", 42);
 
   // printf("1s%0d\n", 42);
   // printf("1s%0d\n", 42);

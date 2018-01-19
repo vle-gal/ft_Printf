@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/19 17:33:44 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 11:23:33 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char		*ft_ostr(int p)
 
 	adr = (unsigned long)p;
 	i = 0;
-	while (p > 9)
+	while (p >= 9)
 	{
 		p /= 10;
 		i++;
@@ -35,6 +35,7 @@ static char		*ft_ostr(int p)
 		i--;
 	}
 	res[0] = base[(adr % 8)];
+
 	return (res);
 }
 
