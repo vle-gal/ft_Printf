@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 21:34:29 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/18 11:42:19 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 16:38:42 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,12 @@ char		*ft_flags_height_int(char *s, size_t len, t_struct *para)
 	char	*new_s;
 
 	para->n = 0;
+	para->s_ == 1 && para->p_ == 0 ? para->nbr-- : 0;
 	a = para->nbr - (int)len;
 	if (a > 0)
 	{
+		// printf("%d %d %d\n", para->s_, para->p_, para->nbr);
+		// printf("%d %d %d\n", para->s_, para->p_, para->nbr);
 		new_s = ft_strnew(para->nbr);
 		a = ft_flags_height_int_help(new_s, para, a);
 		while (s[a])
