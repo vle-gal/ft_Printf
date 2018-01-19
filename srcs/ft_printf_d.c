@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/18 10:44:45 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/19 11:10:18 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ void				ft_d(t_struct *para, char *d)
 void				ft_d_main(t_struct *para, va_list args)
 {
 	char	*d;
-
+	para->chara == 'i'? para->chara = 'd' : 0;
+	para->chara == 'I'? para->chara = 'D' : 0;
 	para->f_one == '\0' && para->chara == 'd' ?
 	d = ft_dstr(va_arg(args, int), para) : 0;
 	if (para->f_one == 'l' || para->chara == 'D' || para->chara == 'I')
