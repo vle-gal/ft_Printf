@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/22 14:53:00 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/22 16:55:30 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void				ft_d(t_struct *para, char *d)
 	// para->p_ == 0 && para->s_ == 1 && d[0] != '-' ?para->res++: 0;
 	// para->p_ == 0 && para->s_ == 1 ?para->s_--: 0;
 	para->d_ != -1 && d[0] == '0' ? d[0] = '\0' : 0;
-	// printf("%d, %d, %d\n", para->p_, para->s_, para->d_);
-	para->p_ == 0 && para->s_ == 1 && d[0] != '-' && para->d_ < (int)ft_strlen(d)?
-	ft_putchar(' ') : 0;
-	para->p_ == 0 && para->s_ == 1 && d[0] != '-' && para->d_ < (int)ft_strlen(d) ?
-	para->res++ : 0;
+	// printf("%d, %d, %d\n", para->p_, para->nbr, para->d_);
+	para->p_ == 0 && para->s_ == 1 && d[0] != '-' &&
+	(para->d_ < (int)ft_strlen(d) || para->d_ > para->nbr) ? ft_putchar(' ') : 0;
+	para->p_ == 0 && para->s_ == 1 && d[0] != '-' &&
+	(para->d_ < (int)ft_strlen(d) || para->d_ > para->nbr) ?para->res++ : 0;
 	para->p_ == 1 && (para->nbr == -1 || para->l_ == 1) && d[0] != '-' &&
 	para->d_ == -1 ? ft_putchar('+') : 0;
 	para->p_ == 1 && (para->nbr == -1 || para->l_ == 1) && d[0] != '-' &&
