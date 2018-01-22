@@ -6,7 +6,7 @@
 #    By: agrumbac <agrumbac@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/15 08:32:21 by agrumbac          #+#    #+#              #
-#    Updated: 2018/01/18 09:47:47 by vle-gal          ###   ########.fr        #
+#    Updated: 2018/01/22 14:44:02 by vle-gal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRCDIR = ./srcs/
 
 LIBOBJDIR = ./libft/objs/
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 
 CC = gcc
 

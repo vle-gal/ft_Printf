@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 15:07:42 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/22 13:34:14 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/22 13:42:04 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,32 +103,32 @@ static char		*ft_xstr(long long int p)
 // 	return (res);
 // }
 
-// static char		*ft_xstrll(long long p, t_struct *para)
-// {
-// 	unsigned long	adr;
-// 	char const		*base;
-// 	char			*res;
-// 	int				i;
-//
-// 	adr = (unsigned long)p;
-// 	para->x = adr;
-// 	i = 0;
-// 	base = "0123456789abcdef";
-// 	while ((para->x / 16) > 0)
-// 	{
-// 		para->x /= 16;
-// 		i++;
-// 	}
-// 	res = ft_strnew(i + 1);
-// 	while ((adr / 16) > 0)
-// 	{
-// 		res[i] = base[(adr % 16)];
-// 		adr /= 16;
-// 		i--;
-// 	}
-// 	res[0] = base[(adr % 16)];
-// 	return (res);
-// }
+static char		*ft_xstrll(long long p, t_struct *para)
+{
+	unsigned long	adr;
+	char const		*base;
+	char			*res;
+	int				i;
+
+	adr = (unsigned long)p;
+	para->x = adr;
+	i = 0;
+	base = "0123456789abcdef";
+	while ((para->x / 16) > 0)
+	{
+		para->x /= 16;
+		i++;
+	}
+	res = ft_strnew(i + 1);
+	while ((adr / 16) > 0)
+	{
+		res[i] = base[(adr % 16)];
+		adr /= 16;
+		i--;
+	}
+	res[0] = base[(adr % 16)];
+	return (res);
+}
 
 static char		*ft_xstrh(short p, t_struct *para)
 {
@@ -172,7 +172,7 @@ void			ft_x_main(t_struct *para, va_list args)
 		para->f_two == '\0' ? x = ft_xstrh((short)va_arg(args, int), para) : 0;
 		para->f_two == 'h' ? x = ft_xstrhh((char)va_arg(args, int), para) : 0;
 	}
-	para->f_one == 'j' ? x = ft_xstr(va_arg(args, long long)) : 0;
+	para->f_one == 'j' ? x = ft_xstrll(va_arg(args, long long), para) : 0;
 	para->f_one == 'z' ? x = ft_xstr(va_arg(args, long)) : 0;
 	para->chara == 'X' ? x = ft_xmaj(x) : 0;
 	para->h_ == 1 ? ft_xhtag(para, x) : ft_x_draw(para, x);
