@@ -6,13 +6,13 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:07:11 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/23 14:18:48 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 16:51:57 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
-# include "libft/doth/libft.h"
+# include "libft.h"
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
