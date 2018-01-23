@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:17:31 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/23 10:03:37 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 11:39:10 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,39 @@ size_t len)
 {
 	s[0] == '-' && para->p_ == 1 && para->s_ == 1 ?
 	new_s = ft_strnew(para->d_++) : 0;
-	para->p_ == 1 && para->nbr != -1 && para->d_ < (int)len? new_s[0] = '+' : 0;
-	para->p_ == 1 && para->nbr != -1 && para->d_ < (int)len? para->p_-- : 0;
-	para->s_ == 1 && para->p_ == 0 && para->d_ == 0? new_s[0] = ' ' : 0;
-	s[0] == '-' && para->nbr > 0? new_s[0] = '-' : 0;
-	s[0] == '-' && para->nbr < 1? ft_putchar('-') : 0;
-	s[0] == '-' && para->nbr < 1? para->res++ : 0;
+	para->p_ == 1 && para->nbr != -1 && para->d_ < (int)len ?
+	new_s[0] = '+' : 0;
+	para->p_ == 1 && para->nbr != -1 && para->d_ < (int)len ? para->p_-- : 0;
+	para->s_ == 1 && para->p_ == 0 && para->d_ == 0 ? new_s[0] = ' ' : 0;
+	s[0] == '-' && para->nbr > 0 ? new_s[0] = '-' : 0;
+	s[0] == '-' && para->nbr < 1 ? ft_putchar('-') : 0;
+	s[0] == '-' && para->nbr < 1 ? para->res++ : 0;
+}
+
+static int		ft_flags_dot_intbis(char *s, int n, char *new_s, t_struct *para)
+{
+	int x;
+
+	x = 0;
+	while (n < para->d_)
+	{
+		s[0] != '-' ? new_s[n++] = s[x++] : 0;
+		s[0] == '-' ? new_s[n++] = s[x + 1] : 0;
+		s[0] == '-' ? ++x : 0;
+	}
+	return (n);
 }
 
 char			*ft_flags_dot_int(char *s, size_t len, t_struct *para)
 {
 	char	*new_s;
 	int		n;
-	int		x;
 
 	new_s = NULL;
-	x = 0;
 	n = 0;
 	s[0] == '-' ? len-- : 0;
-	if (para->d_ == 0 && (para->chara == 'x' || para->chara == 'X' ||
-		para->chara == 'o' || para->chara == 'O'))
-		s[0] = '\0';
+	para->d_ == 0 && (para->chara == 'x' || para->chara == 'X' ||
+	para->chara == 'o' || para->chara == 'O') ? s[0] = '\0' : 0;
 	if (para->d_ < (int)len)
 		return (s);
 	s[0] != '-' || para->p_ != 1 || para->s_ != 1 ?
@@ -46,15 +58,9 @@ char			*ft_flags_dot_int(char *s, size_t len, t_struct *para)
 	s[0] == '-' ? n -= 20 : 0;
 	while (n < para->d_ - (int)len)
 	{
-		new_s[n] == 0 ? (new_s[n++] = '0') : n++ ;
-
+		new_s[n] == 0 ? (new_s[n++] = '0') : n++;
 	}
-	while (n < para->d_)
-	{
-		s[0] != '-' ? new_s[n++] = s[x++] : 0;
-		s[0] == '-' ? new_s[n++] = s[x + 1] : 0;
-		s[0] == '-' ? ++x : 0;
-	}
+	n = ft_flags_dot_intbis(s, n, new_s, para);
 	new_s[n] = '\0';
 	para->s_ = 0;
 	return (new_s);
@@ -82,9 +88,8 @@ char			*ft_flags_less(char *s, size_t len, t_struct *para)
 		new_s[n] = ' ';
 		n++;
 	}
-	para->p_ == 1 ? ft_putchar('+'): 0;
-	para->p_ == 1 ? para->res++: 0;
-	para->p_ == 1 ? para->p_--: 0;
-
+	para->p_ == 1 ? ft_putchar('+') : 0;
+	para->p_ == 1 ? para->res++ : 0;
+	para->p_ == 1 ? para->p_-- : 0;
 	return (new_s);
 }

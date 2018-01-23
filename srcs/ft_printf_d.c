@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 10:04:56 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 13:16:00 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static char			*ft_dstrz(ssize_t d, t_struct *para)
 {
 	char		*dstr;
 	ssize_t		t_d;
+
 	d < 0 ? para->less = 1 : 0;
 	d < 0 ? (d = d * -1) : 0;
 	d == -4594967295 ? t_d = 4594967294 : 0;
@@ -52,8 +53,7 @@ static char			*ft_dstrz(ssize_t d, t_struct *para)
 	d != -4594967295 ? t_d = d : 0;
 	while (t_d > 9)
 	{
-		t_d /= 10;
-		para->len++;
+		1 ? (t_d /= 10) && (para->len++) : 0;
 	}
 	dstr = ft_strnew((size_t)para->len + 1);
 	while (para->len > 0)
@@ -73,11 +73,13 @@ static char			*ft_dstrz(ssize_t d, t_struct *para)
 void				ft_d(t_struct *para, char *d)
 {
 	int		len;
+
 	para->d_ != -1 && d[0] == '0' ? d[0] = '\0' : 0;
 	para->p_ == 0 && para->s_ == 1 && d[0] != '-' &&
-	(para->d_ < (int)ft_strlen(d) || para->d_ > para->nbr) ? ft_putchar(' ') : 0;
+	(para->d_ < (int)ft_strlen(d) || para->d_ > para->nbr) ?
+	ft_putchar(' ') : 0;
 	para->p_ == 0 && para->s_ == 1 && d[0] != '-' &&
-	(para->d_ < (int)ft_strlen(d) || para->d_ > para->nbr) ?para->res++ : 0;
+	(para->d_ < (int)ft_strlen(d) || para->d_ > para->nbr) ? para->res++ : 0;
 	para->p_ == 1 && (para->nbr == -1 || para->l_ == 1) && d[0] != '-' &&
 	para->d_ == -1 ? ft_putchar('+') : 0;
 	para->p_ == 1 && (para->nbr == -1 || para->l_ == 1) && d[0] != '-' &&
@@ -97,8 +99,9 @@ void				ft_d(t_struct *para, char *d)
 void				ft_d_main(t_struct *para, va_list args)
 {
 	char	*d;
-	para->chara == 'i'? para->chara = 'd' : 0;
-	para->chara == 'I'? para->chara = 'D' : 0;
+
+	para->chara == 'i' ? para->chara = 'd' : 0;
+	para->chara == 'I' ? para->chara = 'D' : 0;
 	para->f_one == '\0' && para->chara == 'd' ?
 	d = ft_dstr(va_arg(args, int), para) : 0;
 	if (para->f_one == 'l' || para->chara == 'D' || para->chara == 'I')

@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 21:34:29 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/23 10:03:52 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 11:43:23 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,17 @@ static int	ft_flags_height_int_help(char *new_s, t_struct *para, int a)
 		para->n++;
 		a--;
 	}
-	para->p_ == 1 && para->nbr != -1 && para->d_ > 0? new_s[para->n - 1] = '+' : 0;
-	para->p_ == 1 && para->nbr != -1 && para->d_ > 1? para->p_-- : 0;
-	para->p_ == 1 && para->d != -1 && para->z_ != 1? ft_putchar('+'): 0;
-	para->p_ == 1 && para->d != -1 && para->z_ != 1? para->p_--: 0;
+	para->p_ == 1 && para->nbr != -1 && para->d_ > 0 ?
+	new_s[para->n - 1] = '+' : 0;
+	para->p_ == 1 && para->nbr != -1 && para->d_ > 1 ? para->p_-- : 0;
+	para->p_ == 1 && para->d != -1 && para->z_ != 1 ? ft_putchar('+') : 0;
+	para->p_ == 1 && para->d != -1 && para->z_ != 1 ? para->p_-- : 0;
 	para->s_ == 1 && para->p_ == 0 ? new_s[0] = ' ' : 0;
 	para->p_ == 1 && para->z_ == 1 && para->d_ == -1 ? new_s[0] = '+' : 0;
 	para->p_ == 1 && para->z_ == 1 && para->d_ > 0 ?
 	new_s[para->n - 1] = '+' : 0;
 	para->p_ == 1 && para->z_ == 0 ? new_s[para->n - 1] = '+' : 0;
-	return(a);
+	return (a);
 }
 
 char		*ft_flags_height_int(char *s, size_t len, t_struct *para)

@@ -6,45 +6,17 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 10:04:49 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 13:24:04 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-	static char		*ft_ostr(unsigned int p)
-	{
-		unsigned int tmp;
-		int i;
-		char *str;
-
-		p -= 4294967296;
-		tmp = p;
-		i = 1;
-		while (p >= 9)
-		{
-			p /= 8;
-			i++;
-		}
-		str = ft_strnew(i);
-		p = tmp;
-		p > 0 ? str[i--] = 0 : 0;
-		p == 0 ? str[i] = 0: 0;
-		p == 0 ? str[--i] = '0': 0;
-		while (p > 0)
-		{
-			tmp = p & binaire_octal;
-			str[i--] = tmp + '0';
-			p >>= 3;
-		}
-		return (str);
-	}
-
-static char		*ft_ostrl(unsigned long p)
+static char		*ft_ostr(unsigned int p)
 {
-	unsigned long tmp;
-	int i;
-	char *str;
+	unsigned int	tmp;
+	int				i;
+	char			*str;
 
 	p -= 4294967296;
 	tmp = p;
@@ -57,24 +29,24 @@ static char		*ft_ostrl(unsigned long p)
 	str = ft_strnew(i);
 	p = tmp;
 	p > 0 ? str[i--] = 0 : 0;
-		p == 0 ? str[i] = 0 : 0;
-		p == 0 ? str[--i] = '0': 0;
+	p == 0 ? str[i] = 0 : 0;
+	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-	tmp = p & binaire_octal;
-	str[i--] = tmp + '0';
-	p >>= 3;
+		tmp = p & binaire_octal;
+		str[i--] = tmp + '0';
+		p >>= 3;
 	}
 	return (str);
 }
 
-static char		*ft_ostrll(long long p)
+static char		*ft_ostrl(unsigned long p)
 {
-	long long tmp;
-	int i;
-	char *str;
+	unsigned long	tmp;
+	int				i;
+	char			*str;
 
-	p -= 4294967296 ;
+	p -= 4294967296;
 	tmp = p;
 	i = 1;
 	while (p >= 9)
@@ -84,23 +56,51 @@ static char		*ft_ostrll(long long p)
 	}
 	str = ft_strnew(i);
 	p = tmp;
-	p > 0 ?str[i--] = 0 : 0;
-		p == 0 ? str[i] = 0: 0;
-		p == 0 ? str[--i] = '0': 0;
+	p > 0 ? str[i--] = 0 : 0;
+	p == 0 ? str[i] = 0 : 0;
+	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-	tmp = p & binaire_octal;
-	str[i--] = tmp + '0';
-	p >>= 3;
+		tmp = p & binaire_octal;
+		str[i--] = tmp + '0';
+		p >>= 3;
+	}
+	return (str);
+}
+
+static char		*ft_ostrll(long long p)
+{
+	long long		tmp;
+	int				i;
+	char			*str;
+
+	p -= 4294967296;
+	tmp = p;
+	i = 1;
+	while (p >= 9)
+	{
+		p /= 8;
+		i++;
+	}
+	str = ft_strnew(i);
+	p = tmp;
+	p > 0 ? str[i--] = 0 : 0;
+	p == 0 ? str[i] = 0 : 0;
+	p == 0 ? str[--i] = '0' : 0;
+	while (p > 0)
+	{
+		tmp = p & binaire_octal;
+		str[i--] = tmp + '0';
+		p >>= 3;
 	}
 	return (str);
 }
 
 static char		*ft_ostrh(short p)
 {
-	int tmp;
-	int i;
-	char *str;
+	int		tmp;
+	int		i;
+	char	*str;
 
 	tmp = p;
 	i = 1;
@@ -112,13 +112,13 @@ static char		*ft_ostrh(short p)
 	str = ft_strnew(i);
 	p = tmp;
 	p > 0 ? str[i--] = 0 : 0;
-		p == 0 ? str[i] = 0: 0;
-		p == 0 ? str[--i] = '0': 0;
+	p == 0 ? str[i] = 0 : 0;
+	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-	tmp = p & binaire_octal;
-	str[i--] = tmp + '0';
-	p >>= 3;
+		tmp = p & binaire_octal;
+		str[i--] = tmp + '0';
+		p >>= 3;
 	}
 	return (str);
 }

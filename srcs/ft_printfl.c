@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:26 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 10:07:42 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 14:04:37 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ static void		ft_flags(const char *format, t_struct *para)
 
 static int		ft_format(const char *format, t_struct *para)
 {
-		para->f_one = 0;
-		para->f_two = 0;
+	para->f_one = 0;
+	para->f_two = 0;
 	while ((format[para->i] && format[para->i] != '%') ||
 	(format[para->i] == '%' && format[para->i + 1] == '%'))
 	{
@@ -109,14 +109,6 @@ static void		ft_para(const char *format, t_struct *para, va_list args)
 		mod[0] = '%';
 		ft_d(para, mod);
 	}
-	para->l_ = 0;
-	para->z_ = 0;
-	para->p_ = 0;
-	para->d_ = 0;
-	para->nbr = 0;
-	para->less = 0;
-	para->len = 0;
-	para->t_d = 0;
 }
 
 int				ft_printf(const char *format, ...)
@@ -130,6 +122,14 @@ int				ft_printf(const char *format, ...)
 	{
 		ft_para(format, &para, args);
 		para.i++;
+		para.d_ = 0;
+		para.nbr = 0;
+		para.less = 0;
+		para.len = 0;
+		para.t_d = 0;
+		para.l_ = 0;
+		para.z_ = 0;
+		para.p_ = 0;
 	}
 	va_end(args);
 	return (para.res);

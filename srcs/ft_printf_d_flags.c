@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 11:35:02 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/22 19:41:24 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 13:01:59 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,7 @@ char	*ft_dstrll(long long d, t_struct *para)
 	(d != -9223372036854775807 - 1) ? para->t_d = d : 0;
 	while (para->t_d > 9)
 	{
-		para->t_d /= 10;
-		para->len++;
+		1 ? (para->t_d /= 10) && (para->len++) : 0;
 	}
 	dstr = ft_strnew((size_t)para->len + 2);
 	while (para->len > 0)

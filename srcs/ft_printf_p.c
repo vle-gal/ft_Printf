@@ -6,18 +6,26 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:09 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 10:05:17 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 13:31:17 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+static int		ft_putaddrr_help(int i, long long int p, char *str)
+{
+	p > 0 ? str[i--] = 0 : 0;
+	p == 0 ? str[i] = 0 : 0;
+	p == 0 ? (str[--i] = '0') && (i--) : 0;
+	return (i);
+}
+
 static char		*ft_putaddrr(long long int p)
 {
 	char const		*base;
-	long long tmp;
-	int i;
-	char *str;
+	long long		tmp;
+	int				i;
+	char			*str;
 
 	base = "0123456789abcdef";
 	p < 0 ? p -= 4294967296 : 0;
@@ -25,15 +33,11 @@ static char		*ft_putaddrr(long long int p)
 	i = 3;
 	while (p >= 16)
 	{
-		p /= 16;
-		i++;
+		1 ? (p /= 16) && (i++) : 0;
 	}
 	str = ft_strnew(i);
 	p = tmp;
-	p > 0 ? str[i--] = 0 : 0;
-	p == 0 ? str[i] = 0: 0;
-	p == 0 ? str[--i] = '0': 0;
-	p == 0 ? --i : 0;
+	i = ft_putaddrr_help(i, p, str);
 	while (p > 0)
 	{
 		tmp = p & binaire_Hex;
@@ -44,7 +48,6 @@ static char		*ft_putaddrr(long long int p)
 	str[i] = '0';
 	return (str);
 }
-
 
 void			ft_p(t_struct *para, char *p)
 {

@@ -6,18 +6,27 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 15:07:42 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 10:07:30 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 13:57:06 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
+static int		ft_xstr_help(long long int p, int i, char *str)
+{
+	p == 0 ? str[i] = 0 : 0;
+	p == 0 ? str[--i] = '0' : 0;
+	p > 0 ? str[i--] = 0 : 0;
+	p == 0 ? --i : 0;
+	return (i);
+}
+
 static char		*ft_xstr(long long int p)
 {
-	char const		*base;
-	long long tmp;
-	int i;
-	char *str;
+	char const	*base;
+	long long	tmp;
+	int			i;
+	char		*str;
 
 	base = "0123456789abcdef";
 	p < 0 ? p += 4294967296 : 0;
@@ -25,15 +34,11 @@ static char		*ft_xstr(long long int p)
 	i = 1;
 	while (p >= 16)
 	{
-		p /= 16;
-		i++;
+		1 ? (p /= 16) && (i++) : 0;
 	}
 	str = ft_strnew(i);
 	p = tmp;
-	p > 0 ? str[i--] = 0 : 0;
-	p == 0 ? str[i] = 0: 0;
-	p == 0 ? str[--i] = '0': 0;
-	p == 0 ? --i : 0;
+	i = ft_xstr_help(p, i, str);
 	while (p > 0)
 	{
 		tmp = p & binaire_Hex;
