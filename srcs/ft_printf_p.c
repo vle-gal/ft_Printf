@@ -6,56 +6,11 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:09 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 17:39:59 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 10:05:17 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-// static int		ft_unsigned_longlen(unsigned long lu)
-// {
-// 	int		len;
-//
-// 	len = 1;
-// 	while (lu > 9)
-// 	{
-// 		len++;
-// 		lu /= 10;
-// 	}
-// 	// printf("-%d\n", len);
-// 	return (len);
-// }
-//
-// static char		*ft_putaddrr(void *p)
-// {
-// 	unsigned long	adr;
-// 	char const		*base;
-// 	char			*res;
-// 	int				i;
-//
-// 	res = ft_strnew(14);
-// 	adr = (unsigned long)p;
-// 	base = "0123456789abcdef";
-// 	ft_unsigned_longlen(adr) == 15 ? i = 11 : 0;
-// 	// ft_unsigned_longlen(adr) == 8 ? i = 6 : 0;
-// 	ft_unsigned_longlen(adr) != 15 ? i = 5 : 0;
-// 	while ((adr / 16) > 0 || i >= 11)
-// 	{
-// 		res[i + 2] = base[(adr % 16)];
-// 		adr /= 16;
-// 		i--;
-// 		// printf("%d\n", i);
-// 	}
-// 	// printf("%c\n", base[(adr % 16)]);
-// 	res[i + 2] = base[(adr % 16)];
-// 	// printf("%c\n", res[i + 2]);
-// 	// printf("%d\n", i);
-// 	res[0] = ('0');
-// 	res[1] = ('x');
-// 	// printf("%s\n", res);
-// 	p == NULL ? res[2] = ('0') : 0;
-// 	return (res);
-// }
 
 static char		*ft_putaddrr(long long int p)
 {

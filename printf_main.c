@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:09:12 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/22 16:24:52 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 09:54:32 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,16 @@ int main(void)
 // printf("%lo\n", -10000000000);
   // ft_printf("%lu", -42);
   // printf("%llu\n", -42);
-  // unsigned long a;
-  // a = -420;
-  // % 4.5i 42 == | 00042|
-  printf("% 4.5i|\n", 42);
-  ft_printf("% 4.5i|\n", 42);
+  unsigned long a;
+  a = -42;
+  // % 4.5i
+  // 42 == | 00042|
+  // printf("% 4.5i|\n", 42);
+  // ft_printf("% 4.5i|\n", 42);
   // printf("%u\n", -42);
 
-   // printf("%lu", -42);
+   ft_printf("%lu\n", a);
+   printf("%lu", a);
    // ft_printf("%zd\n", -1);
    // printf("%zd", -1);
 // 1777777777665375016000

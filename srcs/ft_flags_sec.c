@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:17:31 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/22 16:26:03 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 10:03:37 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,41 +42,21 @@ char			*ft_flags_dot_int(char *s, size_t len, t_struct *para)
 		return (s);
 	s[0] != '-' || para->p_ != 1 || para->s_ != 1 ?
 	new_s = ft_strnew(para->d_) : 0;
-	// s[0] != '-' || para->p_ != 1 || para->s_ != 1 ?
-	// printf("|{}%d|\n", 1) : 0;
-	// printf("-%d+%d", para->d_, (int)len);
 	ft_flags_dot_int_help(s, para, new_s, len);
-	// printf("TEST\n");
 	s[0] == '-' ? n -= 20 : 0;
 	while (n < para->d_ - (int)len)
 	{
-		// printf("=%d\n", n);
-		// printf("%d\n", new_s[n]);
-		// new_s[n] == 0 ? printf("OUI\n") : printf("NON PAS LA\n") ;
 		new_s[n] == 0 ? (new_s[n++] = '0') : n++ ;
-		// printf("%-c\n", new_s[n - 1]);
 
 	}
-	// printf("%d\n", n);
-	// printf("[]%d\n", new_s[n - 1]);
-	// printf("%s\n", s);
-	// printf("%d\n", x);
 	while (n < para->d_)
 	{
-		// printf("|%d\n", n);
-		// printf("--%c\n", s[x]);
-		// printf("%d\n", n);
 		s[0] != '-' ? new_s[n++] = s[x++] : 0;
 		s[0] == '-' ? new_s[n++] = s[x + 1] : 0;
 		s[0] == '-' ? ++x : 0;
-		// printf("%-c\n", new_s[n - 1]);
-		// printf("}}%d\n", x);
-		// printf("-%c-\n",new_s[n - 1]);
 	}
-	// printf("|||%c\n", new_s[0]);
 	new_s[n] = '\0';
 	para->s_ = 0;
-	// printf("|%s|", new_s);
 	return (new_s);
 }
 

@@ -6,41 +6,11 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 15:07:42 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/22 13:42:04 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 10:07:30 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-// static char		*ft_xstr(int p, t_struct *para)
-// {
-// 	unsigned long	adr;
-// 	char const		*base;
-// 	char			*res;
-// 	int				i;
-//
-// printf("%ld\n", p);
-// 	adr = (unsigned long)p;
-// 	para->x = adr;
-// 	i = 0;
-// 	base = "0123456789abcdef";
-// 	while (para->x > 16)
-// 	{
-// 		para->x /= 16;
-// 		i++;
-// 	}
-// 	p < 0 ? i = 7 : 0;
-// 	res = ft_strnew(i);
-// 	while ((adr / 16) > 0)
-// 	{
-// 		res[i] = base[(adr % 16)];
-// 		adr /= 16;
-// 		i--;
-// 	}
-// 	printf("%d\n", base[(adr % 16)]);
-// 	res[0] = base[(adr % 16)];
-// 	return (res);
-// }
 
 static char		*ft_xstr(long long int p)
 {
@@ -51,7 +21,6 @@ static char		*ft_xstr(long long int p)
 
 	base = "0123456789abcdef";
 	p < 0 ? p += 4294967296 : 0;
-	// printf("%d\n", p);
 	tmp = p;
 	i = 1;
 	while (p >= 16)
@@ -71,37 +40,8 @@ static char		*ft_xstr(long long int p)
 		str[i--] = base[(tmp % 16)];
 		p >>= 4;
 	}
-	// str[i--] = 'x';
-	// str[i] = '0';
 	return (str);
 }
-
-// static char		*ft_xstrl(long p, t_struct *para)
-// {
-// 	unsigned long	adr;
-// 	char const		*base;
-// 	char			*res;
-// 	int				i;
-//
-// 	adr = (unsigned long)p;
-// 	para->x = adr;
-// 	i = 0;
-// 	base = "0123456789abcdef";
-// 	while ((para->x / 16) > 0)
-// 	{
-// 		para->x /= 16;
-// 		i++;
-// 	}
-// 	res = ft_strnew(i);
-// 	while ((adr / 16) > 0)
-// 	{
-// 		res[i] = base[(adr % 16)];
-// 		adr /= 16;
-// 		i--;
-// 	}
-// 	res[0] = base[(adr % 16)];
-// 	return (res);
-// }
 
 static char		*ft_xstrll(long long p, t_struct *para)
 {

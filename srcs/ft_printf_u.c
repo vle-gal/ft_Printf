@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 18:03:45 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/22 15:40:29 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 10:04:53 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,18 @@ static char		*ft_ustrl(long long d, t_struct *para)
 	unsigned long long	len_n;
 	unsigned long long	less;
 
-	// printf("%d\n", d);
 	d < 0 ? less = 18446744073709551615u + (d + 1) : 0;
-	// printf("%lu\n", less);
 	d >= 0 ? less = d : 0;
 	len = 0;
 	d == 44294967296u ? (len_n = 4294967295u) && (para->d++) : 0;
 	len_n = less;
-	// printf("%lu\n", len_n);
 	while (len_n > 9)
 	{
 		len_n /= 10;
 		len++;
 	}
 	dstr = ft_strnew((size_t)len);
+	dstr[len + 1] = 0;
 	while (len > 0)
 	{
 		dstr[len] = (less % 10) + '0';

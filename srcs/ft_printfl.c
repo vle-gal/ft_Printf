@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:26 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/19 12:26:08 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/23 10:07:42 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,6 @@ int				ft_printf(const char *format, ...)
 	t_struct	para;
 	va_list		args;
 
-
-	// t_struct	tutu;
-	// para = NULL;
-	// if (!(para = (t_struct *)malloc(sizeof(t_struct))))
-	// 	return (0);
 	bzero(&para, sizeof(para));
 	va_start(args, format);
 	while (ft_format(format, &para))
