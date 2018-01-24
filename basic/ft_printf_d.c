@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 16:55:06 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 16:55:50 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static char			*ft_dstr(int d, t_struct *para)
 		para->t_d /= 10;
 		para->len++;
 	}
-	printf("%d\n", para->len);
 	dstr = ft_strnew((size_t)para->len + 2);
 	dstr[para->len + 2] = 0;
 	while (para->len > 0)
