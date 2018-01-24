@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 13:12:11 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 14:24:43 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static char			*ft_dstrz(ssize_t d, t_struct *para)
 	{
 		1 ? (t_d /= 10) && (para->len++) : 0;
 	}
-	dstr = ft_strnew((size_t)para->len + 1);
+	dstr = ft_strnew((size_t)para->len + 2);
 	while (para->len > 0)
 	{
 		para->less == 1 ? dstr[para->len + 1] = (d % 10) + '0' : 0;

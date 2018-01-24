@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:17:31 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 13:11:29 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 15:22:46 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char			*ft_flags_less(char *s, size_t len, t_struct *para)
 		return (s);
 	len_less = para->nbr;
 	para->s_ == 1 || para->p_ == 1 ? len_less-- : 0;
-	new_s = ft_strnew(para->nbr);
+	new_s = ft_strnew(para->nbr + 1);
 	n = 0;
 	while (n < (int)len)
 	{
