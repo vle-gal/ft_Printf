@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:40:46 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 13:24:04 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:35:32 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char		*ft_ostr(unsigned int p)
 	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-		tmp = p & binaire_octal;
+		tmp = p & BINAIRE_OCTAL;
 		str[i--] = tmp + '0';
 		p >>= 3;
 	}
@@ -61,7 +61,7 @@ static char		*ft_ostrl(unsigned long p)
 	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-		tmp = p & binaire_octal;
+		tmp = p & BINAIRE_OCTAL;
 		str[i--] = tmp + '0';
 		p >>= 3;
 	}
@@ -89,7 +89,7 @@ static char		*ft_ostrll(long long p)
 	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-		tmp = p & binaire_octal;
+		tmp = p & BINAIRE_OCTAL;
 		str[i--] = tmp + '0';
 		p >>= 3;
 	}
@@ -116,7 +116,7 @@ static char		*ft_ostrh(short p)
 	p == 0 ? str[--i] = '0' : 0;
 	while (p > 0)
 	{
-		tmp = p & binaire_octal;
+		tmp = p & BINAIRE_OCTAL;
 		str[i--] = tmp + '0';
 		p >>= 3;
 	}

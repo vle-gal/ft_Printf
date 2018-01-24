@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:09:57 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 11:41:38 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:13:43 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void		ft_ls(t_struct *para, wchar_t *s_l)
 	ft_putstr(s);
 	para->res = ft_strlen(s) + para->res;
 	if (s)
-		free (s);
+		free(s);
 }
 
 static void		ft_s(t_struct *para, char *s)
@@ -73,9 +73,8 @@ static void		ft_s(t_struct *para, char *s)
 	len = ft_strlen(test);
 	if (para->d_ != -1)
 	{
-		while (para->d_ < len)
+		while (para->d_ < len--)
 		{
-			len--;
 			test[len] = '\0';
 		}
 	}
@@ -87,7 +86,7 @@ static void		ft_s(t_struct *para, char *s)
 	para->res = ft_strlen(test) + para->res;
 	ft_putstr(test);
 	if (test)
-		free (test);
+		free(test);
 }
 
 void			ft_s_main(t_struct *para, va_list args)

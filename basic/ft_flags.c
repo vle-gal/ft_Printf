@@ -6,11 +6,20 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 21:34:29 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 11:46:10 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:11:49 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+
+static void	ft_flags_help(t_struct *para, char *new_s, int n)
+{
+	para->s_ == 1 && para->p_ == 0 ? new_s[0] = ' ' : 0;
+	para->p_ == 1 && para->z_ == 1 && para->d_ == -1 ? new_s[0] = '+' : 0;
+	para->p_ == 1 && para->z_ == 1 && para->d_ > 0 ?
+	new_s[n - 1] = '+' : 0;
+	para->p_ == 1 && para->z_ == 0 ? new_s[n - 1] = '+' : 0;
+}
 
 char		*ft_flags_height(char *s, size_t len, t_struct *para)
 {
@@ -29,11 +38,7 @@ char		*ft_flags_height(char *s, size_t len, t_struct *para)
 			para->z_ != 1 || para->d_ != -1 ? new_s[n] = ' ' : 0;
 			1 ? a-- && (n++) : 0;
 		}
-		para->s_ == 1 && para->p_ == 0 ? new_s[0] = ' ' : 0;
-		para->p_ == 1 && para->z_ == 1 && para->d_ == -1 ? new_s[0] = '+' : 0;
-		para->p_ == 1 && para->z_ == 1 && para->d_ > 0 ?
-		new_s[n - 1] = '+' : 0;
-		para->p_ == 1 && para->z_ == 0 ? new_s[n - 1] = '+' : 0;
+		ft_flags_help(para, new_s, n);
 		while (s[a])
 			s[a] != 0 ? (new_s[n] = s[a]) && (n++) && (a++) : 0;
 		if (s)
@@ -86,7 +91,7 @@ char		*ft_flags_height_int(char *s, size_t len, t_struct *para)
 			a++;
 		}
 		if (s)
-			free (s);
+			free(s);
 		return (new_s);
 	}
 	return (s);
@@ -106,10 +111,7 @@ char		*ft_flags_dot(char *s, size_t len, t_struct *para)
 	{
 		new_s = ft_strnew((size_t)para->d_);
 		while (n < (para->d_ - (int)len))
-		{
-			new_s[n] = '0';
-			n++;
-		}
+			new_s[n++] = '0';
 		while (n < para->d_)
 		{
 			new_s[n] = s[x];
@@ -117,7 +119,7 @@ char		*ft_flags_dot(char *s, size_t len, t_struct *para)
 			n++;
 		}
 		if (s)
-			free (s);
+			free(s);
 		return (new_s);
 	}
 	return (s);

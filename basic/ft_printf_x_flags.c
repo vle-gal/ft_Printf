@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 13:12:30 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 11:48:17 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:20:36 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ char	*ft_xstrhh(char p, t_struct *para)
 	}
 	res[0] = base[(adr % 16)];
 	return (res);
-
 }
 
 void	ft_xhtag(t_struct *para, char *x)
@@ -55,7 +54,7 @@ void	ft_xhtag(t_struct *para, char *x)
 		ft_strcat(tmp, x);
 		ft_x_draw(para, tmp);
 		if (x)
-			free (x);
+			free(x);
 	}
 	else
 		ft_x_draw(para, x);
@@ -82,14 +81,11 @@ void	ft_x_draw(t_struct *para, char *x)
 
 	x[0] == '0' && para->d_ == 0 ? x[0] = '\0' : 0;
 	len = ft_strlen(x);
-	if (para->d_ != -1)
-		x = ft_flags_dot(x, len, para);
+	para->d_ != -1 ? x = ft_flags_dot(x, len, para) : 0;
 	len = ft_strlen(x);
-	if (para->nbr != '\0' && para->l_ == 0)
-		x = ft_flags_height(x, len, para);
+	para->nbr != '\0' && para->l_ == 0 ? x = ft_flags_height(x, len, para) : 0;
 	len_less = ft_strlen(x);
-	if (para->l_ == 1)
-		x = ft_flags_less(x, len, para);
+	para->l_ == 1 ? x = ft_flags_less(x, len, para) : 0;
 	para->res += ft_strlen(x);
 	para->chara == 'x' && para->z_ == 1 && para->nbr > len && para->l_ == 0 &&
 	para->h_ == 1 ? (x[1] = 'x') : 0;
@@ -103,5 +99,5 @@ void	ft_x_draw(t_struct *para, char *x)
 	para->h_ == 1 && para->z_ == 1 ? x[0] = '0' : 0;
 	ft_putstr(x);
 	if (x)
-		free (x);
+		free(x);
 }

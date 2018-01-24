@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:17:31 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 11:29:24 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:11:29 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char			*ft_flags_dot_int(char *s, size_t len, t_struct *para)
 	new_s[n] = '\0';
 	para->s_ = 0;
 	if (s)
-		free (s);
+		free(s);
 	return (new_s);
 }
 
@@ -87,13 +87,12 @@ char			*ft_flags_less(char *s, size_t len, t_struct *para)
 	}
 	while (n < len_less)
 	{
-		new_s[n] = ' ';
-		n++;
+		new_s[n++] = ' ';
 	}
 	para->p_ == 1 ? ft_putchar('+') : 0;
 	para->p_ == 1 ? para->res++ : 0;
 	para->p_ == 1 ? para->p_-- : 0;
 	if (s)
-		free (s);
+		free(s);
 	return (new_s);
 }

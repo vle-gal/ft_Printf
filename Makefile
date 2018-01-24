@@ -6,10 +6,10 @@
 #    By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/16 23:06:16 by vle-gal           #+#    #+#              #
-#    Updated: 2018/01/24 10:58:36 by vle-gal          ###   ########.fr        #
+#    Updated: 2018/01/24 14:09:31 by vle-gal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME = LibftPrintf.a #Makefile simple
+NAME = libftprintf.a #Makefile simple
 #les Path finding
 
 vpath %.c basic
@@ -53,7 +53,9 @@ $(OBJDIR)/%.o : %.c
 
 #les règles
 
-all: $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo ${Y}Success"  "[${NAME}]${X}
 	@echo $(R)Oh, God. Never underestimate the power of stupid things \
@@ -65,9 +67,10 @@ $(OBJDIR):
 #les outils
 
 clean :
-	@rm -rf $(OBJDIR)
+	@rm -rf $(OBJS) $(OBJDIR)
 	@echo $(R)Die when I kill you!
 fclean : clean
-	@rm -rf $(NAME)
+	@rm -rf ./objdiro $(NAME)
+	@echo Twice!
 re : fclean
 	@make

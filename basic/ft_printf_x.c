@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 15:07:42 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 11:38:58 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:34:23 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char		*ft_xstr(long long int p)
 	i = ft_xstr_help(p, i, str);
 	while (p > 0)
 	{
-		tmp = p & binaire_Hex;
+		tmp = p & BINAIRE_HEX;
 		str[i--] = base[(tmp % 16)];
 		p >>= 4;
 	}

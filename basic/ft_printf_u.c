@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 18:03:45 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 11:36:44 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 13:17:44 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,16 @@ static char		*ft_ustr(int d)
 
 static char		*ft_ustrl(long long d, t_struct *para)
 {
-	char			*dstr;
-	int				len;
+	char				*dstr;
+	int					len;
 	unsigned long long	len_n;
 	unsigned long long	less;
 
-	// printf("%d\n", d);
 	d < 0 ? less = 18446744073709551615u + (d + 1) : 0;
-	// printf("%lu\n", less);
 	d >= 0 ? less = d : 0;
 	len = 0;
 	d == 44294967296u ? (len_n = 4294967295u) && (para->d++) : 0;
 	len_n = less;
-	// printf("%lu\n", len_n);
 	while (len_n > 9)
 	{
 		len_n /= 10;
@@ -129,8 +126,8 @@ void			ft_u_main(t_struct *para, va_list args)
 {
 	char	*d;
 
-	(para->f_one == '\0' && para->chara == 'u') ?
-	(d = ft_ustr(va_arg(args, int))) : (d = NULL);
+	para->f_one == '\0' && para->chara == 'u' ?
+	d = ft_ustr(va_arg(args, int)) : 0;
 	if (para->f_one == 'l' || para->chara == 'U')
 	{
 		para->f_two == '\0' ? d = ft_ustrl(va_arg(args, long), para) : 0;
