@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:09:12 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 14:17:02 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 16:33:42 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@
 
 int	main(void)
 {
-	unsigned long a;
-
 	printf("--------\n");
 	printf("\n--------\n");
 	printf("\n");
-	a = 2147483647;
-	printf("%lu\n", a);
-	ft_printf("%lu\n", a);
+	printf("%i\n", -2147483648);
+	ft_printf("%i\n", -2147483648);
 	return (0);
 }
