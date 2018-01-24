@@ -6,11 +6,14 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 19:09:12 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/23 10:57:49 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:15:38 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int	main(void)
 {
@@ -19,7 +22,7 @@ int	main(void)
 	printf("--------\n");
 	printf("\n--------\n");
 	printf("\n");
-	a = -42;
+	a = 42;
 	ft_printf("%lu\n", a);
 	printf("%lu", a);
 	return (0);

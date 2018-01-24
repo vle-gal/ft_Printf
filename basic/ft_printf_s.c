@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:09:57 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/19 17:44:15 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:31:00 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static char		*ft_switch_wchar(wchar_t *s_l)
 		n--;
 		a++;
 	}
+	// if (s_l)
+	// 	free (s_l);
 	return (new_s);
 }
 
@@ -56,6 +58,8 @@ static void		ft_ls(t_struct *para, wchar_t *s_l)
 	len_less = ft_strlen(s);
 	ft_putstr(s);
 	para->res = ft_strlen(s) + para->res;
+	if (s)
+		free (s);
 }
 
 static void		ft_s(t_struct *para, char *s)
@@ -84,6 +88,10 @@ static void		ft_s(t_struct *para, char *s)
 	len_less = ft_strlen(test);
 	para->res = ft_strlen(test) + para->res;
 	ft_putstr(test);
+	if (test)
+		free (test);
+	if (s)
+		free (s);
 }
 
 void			ft_s_main(t_struct *para, va_list args)

@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 13:38:38 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/22 13:56:56 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:30:30 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_ostrhh(char p)
 {
 	unsigned long	adr;
-	char const		*base;
+	char const		base[8];
 	char			*res;
 	int				i;
 
@@ -28,7 +28,7 @@ char	*ft_ostrhh(char p)
 	}
 	adr = (unsigned char)p;
 	res = ft_strnew(i + 1);
-	base = "01234567";
+	strcpy((char *)base, "01234567");
 	while ((adr / 8) > 0 || i > 1)
 	{
 		res[i] = base[(adr % 8)];
@@ -49,7 +49,8 @@ void	ft_ohtag(t_struct *para, char *o)
 	tmp = ft_strnew((size_t)n);
 	o[0] != '0' ? tmp[0] = '0' : 0;
 	ft_strcat(tmp, o);
-	free(o);
+	if (o)
+		free(o);
 	ft_o_draw(para, tmp);
 }
 
@@ -69,4 +70,6 @@ void	ft_o_draw(t_struct *para, char *o)
 	len_less = ft_strlen(o);
 	para->res += ft_strlen(o);
 	ft_putstr(o);
+	if (o)
+		free (o);
 }

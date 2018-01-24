@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 18:03:45 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/23 13:33:12 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:26:36 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,27 @@ static char		*ft_ustr(int d)
 
 static char		*ft_ustrl(long long d, t_struct *para)
 {
-	char				*dstr;
-	int					len;
+	char			*dstr;
+	int				len;
 	unsigned long long	len_n;
 	unsigned long long	less;
 
+	// printf("%d\n", d);
 	d < 0 ? less = 18446744073709551615u + (d + 1) : 0;
+	// printf("%lu\n", less);
 	d >= 0 ? less = d : 0;
 	len = 0;
 	d == 44294967296u ? (len_n = 4294967295u) && (para->d++) : 0;
 	len_n = less;
+	// printf("%lu\n", len_n);
 	while (len_n > 9)
 	{
-		1 ? (len_n /= 10) && (len++) : 0;
+		len_n /= 10;
+		len++;
 	}
-	dstr = ft_strnew((size_t)len);
-	dstr[len + 1] = 0;
+	printf("||%d||\n", len);
+	dstr = ft_strnew((size_t)len + 1);
+	printf("%p\n", dstr);
 	while (len > 0)
 	{
 		dstr[len] = (less % 10) + '0';
@@ -65,6 +70,7 @@ static char		*ft_ustrl(long long d, t_struct *para)
 	}
 	dstr[len] = less + '0';
 	para->d == 1 ? dstr[10] = '6' : 0;
+	printf("%zd\n", strlen(dstr));
 	return (dstr);
 }
 
@@ -126,8 +132,9 @@ void			ft_u_main(t_struct *para, va_list args)
 {
 	char	*d;
 
-	para->f_one == '\0' && para->chara == 'u' ?
-	d = ft_ustr(va_arg(args, int)) : 0;
+	(para->f_one == '\0' && para->chara == 'u') ?
+	(d = ft_ustr(va_arg(args, int))) : (d = NULL);
+	printf("%s\n", d);
 	if (para->f_one == 'l' || para->chara == 'U')
 	{
 		para->f_two == '\0' ? d = ft_ustrl(va_arg(args, long), para) : 0;
@@ -142,5 +149,6 @@ void			ft_u_main(t_struct *para, va_list args)
 	para->f_one == 'z' ? d = ft_ustrl(va_arg(args, long), para) : 0;
 	para->s_ = 0;
 	para->p_ = 0;
+	printf("%p\n", d);
 	ft_d(para, d);
 }

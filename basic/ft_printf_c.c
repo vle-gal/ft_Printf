@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 12:20:45 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/20 16:14:27 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 10:42:41 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void				ft_c_draw(t_struct *para, char *c)
 		para->res += len_less;
 		ft_putstr(c);
 	}
-	free(c);
+	if (!c)
+		free(c);
 }
 
 void				ft_c_main(t_struct *para, va_list args)
@@ -72,5 +73,5 @@ void				ft_c_main(t_struct *para, va_list args)
 	char *c;
 
 	c = ft_cstr((char)va_arg(args, int), para);
-	c[0] != 0 ? ft_c_draw(para, c) : 0;
+	ft_c_draw(para, c);
 }

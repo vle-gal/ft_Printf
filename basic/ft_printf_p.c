@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:09 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 13:31:17 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:30:52 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void			ft_p(t_struct *para, char *p)
 	len_less = ft_strlen(p);
 	para->res = ft_strlen(p) + para->res;
 	ft_putstr(p);
-	free(p);
+	if (p)
+		free(p);
 }
 
 void			ft_p_main(t_struct *para, va_list args)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printfl.c                                       :+:      :+:    :+:   */
+/*   ft_printf_the_main.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 08:14:26 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/23 14:04:37 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:29:30 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ static void		ft_para(const char *format, t_struct *para, va_list args)
 		mod[0] = '%';
 		ft_d(para, mod);
 	}
+	if (mod)
+		free (mod);
 }
 
 int				ft_printf(const char *format, ...)

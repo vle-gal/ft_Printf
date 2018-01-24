@@ -6,7 +6,7 @@
 #    By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/16 23:06:16 by vle-gal           #+#    #+#              #
-#    Updated: 2018/01/23 16:53:03 by vle-gal          ###   ########.fr        #
+#    Updated: 2018/01/24 10:58:36 by vle-gal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = LibftPrintf.a #Makefile simple
@@ -68,6 +68,6 @@ clean :
 	@rm -rf $(OBJDIR)
 	@echo $(R)Die when I kill you!
 fclean : clean
-	@rm $(NAME)
+	@rm -rf $(NAME)
 re : fclean
 	@make
