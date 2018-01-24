@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 16:55:50 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 16:59:44 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ static char			*ft_dstr(int d, t_struct *para)
 	d != -2147483648 ? (para->t_d = d) : 0;
 	while (para->t_d > 9)
 	{
-		para->t_d /= 10;
-		para->len++;
+		1 ? (para->t_d /= 10) && (para->len++) : 0;
 	}
 	dstr = ft_strnew((size_t)para->len + 2);
 	dstr[para->len + 2] = 0;
@@ -105,7 +104,7 @@ void				ft_d_main(t_struct *para, va_list args)
 
 	para->chara == 'i' ? para->chara = 'd' : 0;
 	para->chara == 'I' ? para->chara = 'D' : 0;
-	para->f_one == '\0' && (para->chara == 'd' || para->chara == 'i')?
+	para->f_one == '\0' && (para->chara == 'd' || para->chara == 'i') ?
 	d = ft_dstr(va_arg(args, int), para) : 0;
 	if (para->f_one == 'l' || para->chara == 'D' || para->chara == 'I')
 	{
