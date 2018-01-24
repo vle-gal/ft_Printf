@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 18:03:45 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 11:26:36 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:36:44 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ static char		*ft_ustrl(long long d, t_struct *para)
 		len_n /= 10;
 		len++;
 	}
-	printf("||%d||\n", len);
 	dstr = ft_strnew((size_t)len + 1);
-	printf("%p\n", dstr);
 	while (len > 0)
 	{
 		dstr[len] = (less % 10) + '0';
@@ -70,7 +68,6 @@ static char		*ft_ustrl(long long d, t_struct *para)
 	}
 	dstr[len] = less + '0';
 	para->d == 1 ? dstr[10] = '6' : 0;
-	printf("%zd\n", strlen(dstr));
 	return (dstr);
 }
 
@@ -134,7 +131,6 @@ void			ft_u_main(t_struct *para, va_list args)
 
 	(para->f_one == '\0' && para->chara == 'u') ?
 	(d = ft_ustr(va_arg(args, int))) : (d = NULL);
-	printf("%s\n", d);
 	if (para->f_one == 'l' || para->chara == 'U')
 	{
 		para->f_two == '\0' ? d = ft_ustrl(va_arg(args, long), para) : 0;
@@ -149,6 +145,5 @@ void			ft_u_main(t_struct *para, va_list args)
 	para->f_one == 'z' ? d = ft_ustrl(va_arg(args, long), para) : 0;
 	para->s_ = 0;
 	para->p_ = 0;
-	printf("%p\n", d);
 	ft_d(para, d);
 }

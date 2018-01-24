@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 11:29:36 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:49:35 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void				ft_d(t_struct *para, char *d)
 	para->p_ == 1 && (para->nbr == -1 || para->l_ == 1) && d[0] != '-' &&
 	para->d_ == -1 ? para->res++ : 0;
 	len = ft_strlen(d);
-	printf("%p\n", d);
 	if (para->d_ != -1)
 		d = ft_flags_dot_int(d, len, para);
 	para->d_ > para->nbr ? para->nbr = -1 : 0;

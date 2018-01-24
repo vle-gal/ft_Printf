@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 21:34:29 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 10:41:03 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:46:10 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_flags_height(char *s, size_t len, t_struct *para)
 		para->p_ == 1 && para->z_ == 0 ? new_s[n - 1] = '+' : 0;
 		while (s[a])
 			s[a] != 0 ? (new_s[n] = s[a]) && (n++) && (a++) : 0;
-		if (!s)
+		if (s)
 			free(s);
 		return (new_s);
 	}
@@ -85,7 +85,7 @@ char		*ft_flags_height_int(char *s, size_t len, t_struct *para)
 			para->n++;
 			a++;
 		}
-		if (!s)
+		if (s)
 			free (s);
 		return (new_s);
 	}
@@ -116,7 +116,7 @@ char		*ft_flags_dot(char *s, size_t len, t_struct *para)
 			x++;
 			n++;
 		}
-		if (!s)
+		if (s)
 			free (s);
 		return (new_s);
 	}

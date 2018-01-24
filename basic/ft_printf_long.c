@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 10:43:41 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 09:57:56 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:52:18 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putoctal_long(unsigned long p, t_struct *para)
 	int				i;
 
 	adr = p;
-	strcpy((char *)base, "01234567");
+	ft_strcpy((char *)base, "01234567");
 	i = 10;
 	while ((adr / 8) > 0 || i >= 10)
 	{
@@ -45,7 +45,7 @@ void	ft_puthex_long(unsigned long p, t_struct *para)
 	int				i;
 
 	adr = p;
-	strcpy((char *)base, "0123456789abcdef");
+	ft_strcpy((char *)base, "0123456789abcdef");
 	i = 10;
 	while ((adr / 16) > 0 || i >= 10)
 	{

@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 12:20:45 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 10:42:41 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:50:38 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void				ft_c_draw(t_struct *para, char *c)
 		para->res += len_less;
 		ft_putstr(c);
 	}
-	if (!c)
+	if (c)
 		free(c);
 }
 

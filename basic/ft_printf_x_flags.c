@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 13:12:30 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 10:47:07 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:48:17 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	*ft_xstrhh(char p, t_struct *para)
 		i--;
 	}
 	res[0] = base[(adr % 16)];
-	// free (base);
 	return (res);
 
 }
@@ -55,6 +54,8 @@ void	ft_xhtag(t_struct *para, char *x)
 		para->chara != 'x' ? tmp[1] = 'X' : 0;
 		ft_strcat(tmp, x);
 		ft_x_draw(para, tmp);
+		if (x)
+			free (x);
 	}
 	else
 		ft_x_draw(para, x);
@@ -101,6 +102,6 @@ void	ft_x_draw(t_struct *para, char *x)
 	(para->chara == 'x' || para->chara == 'X') &&
 	para->h_ == 1 && para->z_ == 1 ? x[0] = '0' : 0;
 	ft_putstr(x);
-	if (!x)
+	if (x)
 		free (x);
 }

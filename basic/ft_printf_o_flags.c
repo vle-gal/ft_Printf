@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 13:38:38 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 11:30:30 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 11:52:33 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_ostrhh(char p)
 	}
 	adr = (unsigned char)p;
 	res = ft_strnew(i + 1);
-	strcpy((char *)base, "01234567");
+	ft_strcpy((char *)base, "01234567");
 	while ((adr / 8) > 0 || i > 1)
 	{
 		res[i] = base[(adr % 8)];
