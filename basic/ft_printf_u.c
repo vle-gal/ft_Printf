@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 18:03:45 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 14:18:23 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 14:23:04 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char		*ft_ustr(int d)
 		len_n /= 10;
 		len++;
 	}
-	dstr = ft_strnew((size_t)len);
+	dstr = ft_strnew((size_t)len + 1);
 	while (len > 0)
 	{
 		(dstr[len] = (less % 10) + '0');
@@ -56,7 +56,7 @@ static char		*ft_ustrl(long long d, t_struct *para)
 		len_n /= 10;
 		len++;
 	}
-	dstr = ft_strnew((size_t)len + 2);
+	dstr = ft_strnew((size_t)len + 1);
 	while (len > 0)
 	{
 		dstr[len] = (less % 10) + '0';
