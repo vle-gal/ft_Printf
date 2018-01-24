@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 09:15:06 by anonymou          #+#    #+#             */
-/*   Updated: 2018/01/24 16:34:16 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 16:34:58 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ void				ft_d(t_struct *para, char *d)
 	para->l_ == 1 ? d = ft_flags_less(d, len, para) : 0;
 	para->res += ft_strlen(d);
 	ft_putstr(d);
-	// if (d)
-	// 	free(d);
+	if (d)
+		free(d);
 }
 
 void				ft_d_main(t_struct *para, va_list args)
