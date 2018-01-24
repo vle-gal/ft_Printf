@@ -6,7 +6,7 @@
 /*   By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 16:17:31 by vle-gal           #+#    #+#             */
-/*   Updated: 2018/01/24 15:22:46 by vle-gal          ###   ########.fr       */
+/*   Updated: 2018/01/24 15:25:11 by vle-gal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char			*ft_flags_dot_int(char *s, size_t len, t_struct *para)
 	if (para->d_ < (int)len)
 		return (s);
 	s[0] != '-' || para->p_ != 1 || para->s_ != 1 ?
-	new_s = ft_strnew(para->d_) : 0;
+	new_s = ft_strnew(para->d_ + 1) : 0;
 	ft_flags_dot_int_help(s, para, new_s, len);
 	s[0] == '-' ? n -= 20 : 0;
 	while (n < para->d_ - (int)len)
