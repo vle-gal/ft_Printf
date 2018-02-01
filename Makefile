@@ -6,7 +6,7 @@
 #    By: vle-gal <vle-gal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/16 23:06:16 by vle-gal           #+#    #+#              #
-#    Updated: 2018/01/24 14:09:31 by vle-gal          ###   ########.fr        #
+#    Updated: 2018/02/01 09:29:45 by vle-gal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libftprintf.a #Makefile simple
@@ -67,10 +67,12 @@ $(OBJDIR):
 #les outils
 
 clean :
-	@rm -rf $(OBJS) $(OBJDIR)
+	@rm -rf ./objdiro $(OBJS) $(OBJDIR)
+	@rm -rf libft/objs
 	@echo $(R)Die when I kill you!
 fclean : clean
-	@rm -rf ./objdiro $(NAME)
+	@rm -rf $(NAME)
+	@make -C libft/ fclean
 	@echo Twice!
 re : fclean
 	@make
